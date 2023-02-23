@@ -31,11 +31,18 @@ body{
 }
 
 .button {
-    background-color: brown;
+    background-color: greenyellow;
     grid-row: 4 / 6;
     grid-column: 4 / 8;
     text-align: center;
     padding: 50px;
+    text-decoration: none;
+    color: rgb(14, 145, 14);
+    font-size: 30px;
+    cursor: pointer;
+    font-family: sofia-pro;
+    font-style: normal;
+    font-weight: 100;
 }
 
 .button:hover {
