@@ -77,15 +77,28 @@ nav {
 
 .container {
     display: flex;
+    flex-wrap: nowrap;
 }
 
 .item {
-    flex-grow: 5;
-    height: 500px;
+    width: 64vw;
+    height: 1000px;
+    margin-top: 40px;
     background-color: slategray;
+    font-family: sofia-pro;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: .01em;
+    line-height: 2em;
+    text-transform: none;
+    margin-left: 4%;
+}
+
+p {
+    -ms-text-justify: margin-left: 10px;;
 }
 
 .item + .item {
-    flex-grow: 4;
-    margin-left: 2%;
+    width: 32vw;
 }
