@@ -1,11 +1,10 @@
 * {
     padding: 0;
     margin: 0;
-
 }
 
 body {
-    height: 100vh;
+    height: 500vh;
     width: 100vw;
     background-color: blueviolet;
 }
@@ -31,6 +30,13 @@ nav {
 
 .box a:hover {
     background: #1565C0;    
+}
+
+.logo {
+    background-color: transparent;
+    font-size: 50px;
+    padding-left: 50px;
+    padding-bottom: 10px;
 }
 
 .navigation {
@@ -69,3 +75,17 @@ nav {
     }
 }
 
+.container {
+    display: flex;
+}
+
+.item {
+    flex-grow: 5;
+    height: 500px;
+    background-color: slategray;
+}
+
+.item + .item {
+    flex-grow: 4;
+    margin-left: 2%;
+}
