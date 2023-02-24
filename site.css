@@ -95,10 +95,12 @@ nav {
     margin-left: 4%;
 }
 
-p {
-    -ms-text-justify: margin-left: 10px;;
-}
-
 .item + .item {
     width: 32vw;
+}
+
+.content {
+    padding-left: 30px;
+    padding-right: 25px;
+    padding-top: 20px;
 }
