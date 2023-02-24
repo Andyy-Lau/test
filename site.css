@@ -5,12 +5,12 @@
 
 body {
     height: 500vh;
-    width: 100vw;
+    width: 99vw;
     background-color: blueviolet;
 }
 
 nav {
-    border-bottom: 1px solid black
+    border-bottom: 1px solid black;
 }
 
 .bar ul {
@@ -37,6 +37,8 @@ nav {
     font-size: 50px;
     padding-left: 50px;
     padding-bottom: 10px;
+    font-size: 40pt;
+    font-family: 'Roboto', sans-serif;
 }
 
 .navigation {
@@ -57,30 +59,12 @@ nav {
     background: #1565C0;
 }
 
-@media all and (max-width: 800px) {
-    .navigation {
-        justify-content: space-around;
-    }
-}
-
-@media all and (max-width: 600px) {
-    .navigation {
-        flex-flow: column wrap;
-        padding: 0;
-    }
-    .navigation a {
-        text-align: center;
-        padding: 10px;
-
-    }
-}
-
-.container {
+.fixed-overslider {
     display: flex;
     flex-wrap: nowrap;
 }
 
-.item {
+.content-banner {
     width: 64vw;
     height: 1000px;
     margin-top: 40px;
@@ -95,8 +79,19 @@ nav {
     margin-left: 4%;
 }
 
-.item + .item {
-    width: 32vw;
+.side-bar {
+    width: 33vw;
+    height: 1000px;
+    margin-top: 40px;
+    background-color: slategray;
+    font-family: sofia-pro;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: .01em;
+    line-height: 2em;
+    text-transform: none;
+    margin-left: 4%;
 }
 
 .content {
@@ -104,3 +99,43 @@ nav {
     padding-right: 25px;
     padding-top: 20px;
 }
+
+img {
+    max-height: 90%;
+    max-width: 95%;
+    padding-left: 12px;
+    padding-top: 10px;
+    border-radius: 10px;
+
+}
+
+@media screen and (max-width: 1px) {
+    .navigation {
+        flex-flow: column wrap;
+        padding: 0;
+    }
+    .navigation a {
+        text-align: center;
+        padding: 10px;
+
+    }
+    nav {
+        flex-flow: column wrap;
+        padding: 0;
+    }
+    nav {
+        text-align: center;
+        padding: 10px;
+
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .navigation {
+        justify-content: space-around;
+    }
+    nav {
+        justify-content: space-around;
+    }
+}
+
