@@ -38,7 +38,8 @@ nav {
     padding-left: 50px;
     padding-bottom: 10px;
     font-size: 40pt;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
 }
 
 .navigation {
@@ -119,11 +120,11 @@ img {
         padding: 10px;
 
     }
-    nav {
+    li {
         flex-flow: column wrap;
         padding: 0;
     }
-    nav {
+    li a {
         text-align: center;
         padding: 10px;
 
