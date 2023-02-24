@@ -60,14 +60,13 @@ nav {
     background: #1565C0;
 }
 
-.fixed-overslider {
+.fixed-overslider-home {
     display: flex;
-    flex-wrap: nowrap;
 }
 
 .content-banner {
     width: 64vw;
-    height: 1000px;
+    height: 950px;
     margin-top: 40px;
     background-color: slategray;
     font-family: sofia-pro;
@@ -82,7 +81,7 @@ nav {
 
 .side-bar {
     width: 33vw;
-    height: 1000px;
+    height: 950px;
     margin-top: 40px;
     background-color: slategray;
     font-family: sofia-pro;
@@ -103,11 +102,24 @@ nav {
 
 img {
     max-height: 90%;
-    max-width: 95%;
-    padding-left: 12px;
-    padding-top: 10px;
+    max-width: 97.5%;
+    padding-left: 2%;
+    padding-top: 2%;
     border-radius: 10px;
 
+}
+
+.fixed-overslider {
+    display: flex;
+}
+
+p {
+    display: block;
+}
+
+.subheading {
+    width: 100%;
+    text-align: center;
 }
 
 @media screen and (max-width: 1px) {
