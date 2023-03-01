@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    padding-left: 50px;
+    padding-bottom: 10px;
+    font-size: 50px;
+    background-color: transparent;
+    font-size: 40pt;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+nav {
+    border-bottom: 1px solid black;
+}
+
+.bar ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    background-color: skyblue;
+}
+
+.box a {
+    color: white;
+    padding: 1em;
+    display: block;
+    text-decoration: none;
+}
+
+.box a:hover {
+    background: #1565C0;
+}
+
