@@ -62,11 +62,13 @@ nav {
 
 .fixed-overslider-home {
     display: flex;
+    margin-bottom: 5%;
 }
 
 .content-banner {
+    overflow: hidden; /* TO HIDE LOREM */
     width: 64vw;
-    height: 950px;
+    height: 75vh;
     margin-top: 40px;
     background-color: slategray;
     font-family: sofia-pro;
@@ -79,24 +81,24 @@ nav {
     margin-left: 4%;
 }
 
-.side-bar {
+.scrollable-bar {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
     width: 33vw;
-    height: 950px;
+    height: 75vh;
     margin-top: 40px;
     background-color: slategray;
-    font-family: sofia-pro;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 16px;
-    letter-spacing: .01em;
-    line-height: 2em;
-    text-transform: none;
     margin-left: 4%;
+}
+
+.scrollable-bar::-webkit-scrollbar {
+    display: none;
 }
 
 .content {
     padding-left: 30px;
-    padding-right: 25px;
+    padding-right: 30px;
     padding-top: 20px;
 }
 
@@ -110,16 +112,18 @@ img {
 }
 
 .fixed-overslider {
-    display: flex;
+    display: grid;
+    background-color: grey;
+    height: 80vh;
 }
 
-p {
+/* p {
     display: block;
-}
+} */
 
-.subheading {
-    width: 100%;
-    text-align: center;
+.subheading-message {
+    place-self: center stretch;
+    background-color: white;
 }
 
 @media screen and (max-width: 1px) {
