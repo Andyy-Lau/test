@@ -130,20 +130,12 @@ img {
     font-size: 28px;
 }
 
-footer {
-    display: block;
-    position: fixed;
-}
-
-.footer {
-    border-top: 1px solid grey;
-}
-
 @media screen and (max-width: 1px) {
     .navigation {
         flex-flow: column wrap;
         padding: 0;
     }
+
     .navigation a {
         text-align: center;
         padding: 10px;
@@ -153,6 +145,7 @@ footer {
         flex-flow: column wrap;
         padding: 0;
     }
+
     li a {
         text-align: center;
         padding: 10px;
@@ -164,8 +157,24 @@ footer {
     .navigation {
         justify-content: space-around;
     }
+
     nav {
         justify-content: space-around;
+    }   
+
+    .scrollable-bar {
+        height: 30vh;
+    }
+
+    .content-banner {
+        height: 30vh;
+        font-size: 10px;
+    }
+
+    .content {
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 10px;
     }
 }
 
