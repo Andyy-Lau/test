@@ -164,8 +164,24 @@ footer {
     .navigation {
         justify-content: space-around;
     }
+    
     nav {
         justify-content: space-around;
+    }
+
+    .scrollable-bar {
+        height: 25vh;
+    }
+
+    .content-banner {
+        height: 25vh;
+        font-size: 14px;
+    }
+
+    .content {
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 10px
     }
 }
 
