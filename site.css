@@ -139,7 +139,7 @@ footer {
     border-top: 1px solid grey;
 }
 
-@media screen and (max-width: 1px) {
+@media screen and (max-width: 767px) {
     .navigation {
         flex-flow: column wrap;
         padding: 0;
@@ -156,32 +156,28 @@ footer {
     li a {
         text-align: center;
         padding: 10px;
-
+    }
+        .scrollable-bar {
+        height: 25vh;
+    }
+    .content-banner {
+        height: 25vh;
+        font-size: 14px;
+    }
+    .content {
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 10px
     }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (min-width: 1024px) {
     .navigation {
         justify-content: space-around;
     }
     
     nav {
         justify-content: space-around;
-    }
-
-    .scrollable-bar {
-        height: 25vh;
-    }
-
-    .content-banner {
-        height: 25vh;
-        font-size: 14px;
-    }
-
-    .content {
-        padding-left: 12px;
-        padding-right: 12px;
-        padding-top: 10px
     }
 }
 
