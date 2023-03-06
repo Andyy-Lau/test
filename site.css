@@ -5,7 +5,7 @@
 
 body {
     height: 500vh;
-    width: 99vw;
+    width: 100vw;
     background-color: #D3D7E5;
 }
 
@@ -34,12 +34,11 @@ nav {
 
 .logo {
     background-color: transparent;
-    font-size: 50px;
-    padding-left: 50px;
-    padding-bottom: 10px;
-    font-size: 40pt;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+    font-size: 8vw;
+    padding-left: 2vw;
+    padding-bottom: 1vw;
 }
 
 .navigation {
@@ -66,11 +65,11 @@ nav {
 }
 
 .content-banner {
-    overflow: hidden; /* TO HIDE LOREM */
+    overflow: hidden;
     width: 64vw;
-    height: 75vh;
+    height: 52vw;
     margin-top: 40px;
-    background-color: slategray;
+    background-color: #708090;
     font-family: sofia-pro;
     font-weight: 300;
     font-style: normal;
@@ -78,7 +77,7 @@ nav {
     letter-spacing: .01em;
     line-height: 2em;
     text-transform: none;
-    margin-left: 4%;
+    margin-left: 4vw;
 }
 
 .scrollable-bar {
@@ -86,10 +85,11 @@ nav {
     display: flex;
     flex-direction: column;
     width: 33vw;
-    height: 75vh;
+    height: 52vw;
     margin-top: 40px;
     background-color: slategray;
-    margin-left: 4%;
+    margin-left: 3vw;
+    padding-right: 0.5vw;
 }
 
 .scrollable-bar::-webkit-scrollbar {
@@ -113,8 +113,8 @@ img {
 
 .fixed-overslider {
     display: grid;
-    background-color: grey;
-    height: 70vh;
+    background-color: #C3BA99;
+    height: 50vw;
 }
 
 .subheading-message {
@@ -122,12 +122,12 @@ img {
     text-align: center;
     font-family: 'Lexend Deca', sans-serif;
     font-family: 'Roboto', sans-serif;
-    font-size: 55px;
+    font-size: 5vw;
     color: white;
 }
 
 .subheading-message p {
-    font-size: 28px;
+    font-size: 2.5vw;
 }
 
 footer {
@@ -147,7 +147,7 @@ footer {
     .navigation a {
         text-align: center;
         padding: 10px;
-
+        border-bottom: solid black 1px;
     }
     .bar ul {
         flex-flow: column wrap;
@@ -167,10 +167,8 @@ footer {
         padding: 10px;
     }
         .scrollable-bar {
-        height: 25vh;
     }
     .content-banner {
-        height: 25vh;
         font-size: 14px;
     }
     .content {
@@ -178,6 +176,9 @@ footer {
         padding-right: 12px;
         padding-top: 10px
     }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
 }
 
 @media screen and (min-width: 1024px) {
