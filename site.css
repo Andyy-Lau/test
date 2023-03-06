@@ -6,7 +6,7 @@
 body {
     height: 500vh;
     width: 99vw;
-    background-color: blueviolet;
+    background-color: #D3D7E5;
 }
 
 nav {
@@ -18,7 +18,7 @@ nav {
     display: flex;
     flex-wrap: row wrap;
     justify-content: flex-end;
-    background-color: deepskyblue;
+    background-color: #B2BAD2;
 }
 
 .box a {
@@ -46,7 +46,7 @@ nav {
     display: flex;
     flex-wrap: row wrap;
     justify-content: flex-end;
-    background-color: deepskyblue;
+    background-color: #5E6DA1;
 }
 
 .navigation a {
@@ -149,6 +149,15 @@ footer {
         padding: 10px;
 
     }
+    .bar ul {
+        flex-flow: column wrap;
+        padding: 0;
+    }
+    .box a {
+        text-align: center;
+        padding: 10px;
+
+    }
     li {
         flex-flow: column wrap;
         padding: 0;
@@ -173,11 +182,28 @@ footer {
 
 @media screen and (min-width: 1024px) {
     .navigation {
-        justify-content: space-around;
+        display: flex;
+        flex-wrap: row wrap;
+        justify-content: flex-end;
     }
     
-    nav {
-        justify-content: space-around;
+    .navigation a {
+        color: white;
+        padding: 1em;
+        display: block;
+        text-decoration: none;
+    }
+    .bar ul {
+        display: flex;
+        flex-wrap: row wrap;
+        justify-content: flex-end;
+    }
+    
+    .box a {
+        color: white;
+        padding: 1em;
+        display: block;
+        text-decoration: none;
     }
 }
 
