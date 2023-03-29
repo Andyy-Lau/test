@@ -1,11 +1,11 @@
 function redirectBikes() {
-    location.href = "C:\Users\2005a\Desktop\ICS4U\bikes.html"
+    location.href = ".\bikes.html"
 }
 
 function redirectAbout() {
-    location.href = "C:\Users\2005a\Desktop\ICS4U\about.html"
+    location.href = ".\about.html"
 }
 
 function redirectCart() {
-    location.href = "C:\Users\2005a\Desktop\ICS4U\cart.html"
+    location.href = ".\cart.html"
 }
