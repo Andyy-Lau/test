@@ -41,24 +41,6 @@ nav {
     padding-bottom: 1vw;
 }
 
-.navigation {
-    display: flex;
-    flex-wrap: row wrap;
-    justify-content: flex-end;
-    background-color: #5E6DA1;
-}
-
-.navigation a {
-    color: white;
-    padding: 1em;
-    display: block;
-    text-decoration: none;
-}
-
-.navigation a:hover {
-    background: #1565C0;
-}
-
 .fixed-overslider-home {
     display: flex;
     margin-bottom: 8%;
@@ -140,15 +122,6 @@ footer {
 }
 
 @media screen and (max-width: 767px) {
-    .navigation {
-        flex-flow: column wrap;
-        padding: 0;
-    }
-    .navigation a {
-        text-align: center;
-        padding: 10px;
-        border-bottom: solid black 1px;
-    }
     .bar ul {
         flex-flow: column wrap;
         padding: 0;
@@ -166,7 +139,24 @@ footer {
         text-align: center;
         padding: 10px;
     }
-        .scrollable-bar {
+    .fixed-overslider-home {
+        padding-top: 5vh;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 150vh;
+    }
+    .content-banner {
+        height: 40vh;
+        width: 80vw;
+        margin: 0;
+        padding-bottom: 5vh;
+    }
+    .scrollable-bar {
+        padding-top: 5vh;
+        height: 100vh;
+        width: 80vw;
+        margin: 0;
+        padding: 0;
     }
     .content-banner {
         font-size: 14px;
@@ -178,22 +168,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-}
-
 @media screen and (min-width: 1024px) {
-    .navigation {
-        display: flex;
-        flex-wrap: row wrap;
-        justify-content: flex-end;
-    }
-    
-    .navigation a {
-        color: white;
-        padding: 1em;
-        display: block;
-        text-decoration: none;
-    }
     .bar ul {
         display: flex;
         flex-wrap: row wrap;
