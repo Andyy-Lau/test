@@ -1,11 +1,13 @@
-function redirectBikes() {
-    location.href = ".\bikes.html"
-}
+// Not using JS for this assignment
 
-function redirectAbout() {
-    location.href = ".\about.html"
-}
+// function redirectBikes() {
+//     location.href = ".\bikes.html"
+// }
 
-function redirectCart() {
-    location.href = ".\cart.html"
-}
+// function redirectAbout() {
+//     location.href = ".\about.html"
+// }
+
+// function redirectCart() {
+//     location.href = ".\cart.html"
+// }
