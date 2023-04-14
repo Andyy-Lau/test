@@ -37,18 +37,13 @@ const createMovieContainer = (
   movieImg.src = `https://image.tmdb.org/t/p/original/${poster}`;
   movieTitle.innerText = title;
   movieTagline.innerText = tagline;
-  movieOverview.innerText = overview;
+  movieOverview.innerText = overview === "" ? `There is no overview available for ${title}` : overview;
   movieReleaseDate.innerText = `This movie was released in ${releaseDate}`;
   moviePopularity.innerText = `Movie popularity: ${popularity}`;
+  movieBudget.innerText = budget == 0 ? "The budget is not available" : `The budget for this movie is $${budget}`;
   movieRuntime.innerText = `The movie runtime is ${runtime} minutes`;
   movieOriginalLanguage.innerText = `(${originalLanguage}) is the original language of ${title}`;
   trailerButton.innerText = "Trailer";
-
-  if (budget == 0) {
-    movieBudget.innerText = "The budget is not available";
-  } else {
-    movieBudget.innerText = `The movie budget is ${budget}`;
-  }
 
   trailerButton.addEventListener("click", async () => {
     const trailersData = await getTMDBData(

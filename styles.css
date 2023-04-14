@@ -11,10 +11,32 @@ body {
 
 header {
   text-align: center;
+  padding: 18px;
+  font-size: 34px;
 }
 
 .selector {
+  margin-left: 1%;
+}
+
+#options {
   font-size: 24px;
+  padding: 6px 20px;
+  text-align: center;
+}
+
+label {
+  font-size: 28px;
+  padding-right: 8px;
+}
+
+#get {
+  height: 40px;
+  width: 120px;
+  margin-left: 8px;
+  font-size: 24px;
+  border-radius: 10px;
+  border: none;
 }
 
 #movies {
