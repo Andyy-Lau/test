@@ -5,22 +5,50 @@ const getTMDBData = async (url) => {
   return (await axios.get(url)).data;
 };
 
-const createMovieContainer = (id, title, popularity, overview, poster) => {
+const createMovieContainer = (
+  id,
+  title,
+  popularity,
+  overview,
+  poster,
+  budget,
+  tagline,
+  releaseDate,
+  runtime,
+  originalLanguage
+) => {
   const container = document.createElement("div");
   const text = document.createElement("div");
+  const titleDiv = document.createElement("div");
   const movieTitle = document.createElement("h1");
   const movieOverview = document.createElement("h2");
-  const moviePopularity = document.createElement("h3");
+  const movieTagline = document.createElement("h2");
+  const moviePopularity = document.createElement("h2");
+  const movieBudget = document.createElement("h2");
+  const movieReleaseDate = document.createElement("h2");
+  const movieRuntime = document.createElement("h2");
+  const movieOriginalLanguage = document.createElement("h2");
   const movieImg = document.createElement("img");
   const trailerButton = document.createElement("button");
 
   container.classList.add("container");
+  titleDiv.classList.add("title");
   text.classList.add("description");
   movieImg.src = `https://image.tmdb.org/t/p/original/${poster}`;
   movieTitle.innerText = title;
+  movieTagline.innerText = tagline;
   movieOverview.innerText = overview;
-  moviePopularity.innerText = popularity;
+  movieReleaseDate.innerText = `This movie was released in ${releaseDate}`;
+  moviePopularity.innerText = `Movie popularity: ${popularity}`;
+  movieRuntime.innerText = `The movie runtime is ${runtime} minutes`;
+  movieOriginalLanguage.innerText = `(${originalLanguage}) is the original language of ${title}`;
   trailerButton.innerText = "Trailer";
+
+  if (budget == 0) {
+    movieBudget.innerText = "The budget is not available";
+  } else {
+    movieBudget.innerText = `The movie budget is ${budget}`;
+  }
 
   trailerButton.addEventListener("click", async () => {
     const trailersData = await getTMDBData(
@@ -38,10 +66,17 @@ const createMovieContainer = (id, title, popularity, overview, poster) => {
       : window.open(`https://www.youtube.com/watch?v=${trailer.at(0).key}`);
   });
 
-  text.append(movieTitle);
+  titleDiv.append(movieTitle);
+  titleDiv.append(movieTagline);
+
+  text.append(movieReleaseDate);
   text.append(movieOverview);
   text.append(moviePopularity);
+  text.append(movieBudget);
+  text.append(movieRuntime);
+  text.append(movieOriginalLanguage);
 
+  container.append(titleDiv);
   container.append(movieImg);
   container.append(text);
   container.append(trailerButton);
@@ -54,14 +89,17 @@ async function getMovie(id) {
     `https://api.themoviedb.org/3/movie/${id}?api_key=${TMDB_API_KEY}&language=en-US&adult=false`
   );
   console.log(movie);
-  console.log(movie.id);
-  console.log(movie.title);
   const container = createMovieContainer(
     movie.id,
     movie.title,
     movie.popularity,
     movie.overview,
-    movie.poster_path
+    movie.poster_path,
+    movie.budget,
+    movie.tagline,
+    movie.release_date,
+    movie.runtime,
+    movie.original_language
   );
   movies.appendChild(container);
 }

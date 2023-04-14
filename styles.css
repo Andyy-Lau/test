@@ -7,19 +7,62 @@
 body {
   background-color: gray;
   width: 100vw;
-  display: block;
-}
-
-.description {
-  padding-top: 10vh;
-  text-align: center;
-}
-
-img {
-  width: 50vw;
-  height: auto;
 }
 
 header {
   text-align: center;
+}
+
+.selector {
+  font-size: 24px;
+}
+
+#movies {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  padding: 4%;
+  width: auto;
+  display: block;
+}
+
+.container button {
+  display: block;
+  margin: auto;
+  height: 40px;
+  width: 120px;
+  margin-bottom: 3%;
+  font-size: 24px;
+  border-radius: 10px;
+  border: none;
+}
+
+.title h1 {
+  font-size: 64px;
+}
+
+.title h2 {
+  font-size: 36px;
+}
+
+.description {
+  text-align: center;
+  width: auto;
+  padding: 4%;
+}
+
+.description > * + * {
+  margin-top: 12px;
+}
+
+img {
+  display: block;
+  width: 50vw;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
