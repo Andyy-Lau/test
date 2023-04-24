@@ -5,18 +5,7 @@ const getTMDBData = async (url) => {
   return (await axios.get(url)).data;
 };
 
-const createMovieContainer = (
-  id,
-  title,
-  popularity,
-  overview,
-  poster,
-  budget,
-  tagline,
-  releaseDate,
-  runtime,
-  originalLanguage
-) => {
+const createMovieContainer = (movie) => {
   const container = document.createElement("div");
   const text = document.createElement("div");
   const titleDiv = document.createElement("div");
@@ -34,23 +23,21 @@ const createMovieContainer = (
   container.classList.add("container");
   titleDiv.classList.add("title");
   text.classList.add("description");
-  movieImg.src = `https://image.tmdb.org/t/p/original/${poster}`;
-  movieTitle.innerText = title;
-  movieTagline.innerText = tagline;
-  movieOverview.innerText = overview === "" ? `There is no overview available for ${title}` : overview;
-  movieReleaseDate.innerText = `This movie was released in ${releaseDate}`;
-  moviePopularity.innerText = `Movie popularity: ${popularity}`;
-  movieBudget.innerText = budget == 0 ? "The budget is not available" : `The budget for this movie is $${budget}`;
-  movieRuntime.innerText = `The movie runtime is ${runtime} minutes`;
-  movieOriginalLanguage.innerText = `(${originalLanguage}) is the original language of ${title}`;
+  movieImg.src = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
+  movieTitle.innerText = movie.title;
+  movieTagline.innerText = movie.tagline;
+  movieOverview.innerText = movie.overview === "" ? `There is no overview available for ${movie.title}` : movie.overview;
+  movieReleaseDate.innerText = `This movie was released in ${movie.release_date}`;
+  moviePopularity.innerText = `Movie popularity: ${movie.popularity}`;
+  movieBudget.innerText = movie.budget == 0 ? "The budget is not available" : `The budget for this movie is $${movie.budget}`;
+  movieRuntime.innerText = `The movie runtime is ${movie.runtime} minutes`;
+  movieOriginalLanguage.innerText = `(${movie.original_language}) is the original language of ${movie.title}`;
   trailerButton.innerText = "Trailer";
 
   trailerButton.addEventListener("click", async () => {
     const trailersData = await getTMDBData(
-      `https://api.themoviedb.org/3//movie/${id}/videos?api_key=${TMDB_API_KEY}&language=en-US&adult=false`
+      `https://api.themoviedb.org/3//movie/${movie.id}/videos?api_key=${TMDB_API_KEY}&language=en-US&adult=false`
     );
-
-    console.log(trailersData);
 
     const trailer = trailersData.results.filter((trailer) => {
       return trailer.type === "Trailer";
@@ -83,19 +70,7 @@ async function getMovie(id) {
   let movie = await getTMDBData(
     `https://api.themoviedb.org/3/movie/${id}?api_key=${TMDB_API_KEY}&language=en-US&adult=false`
   );
-  console.log(movie);
-  const container = createMovieContainer(
-    movie.id,
-    movie.title,
-    movie.popularity,
-    movie.overview,
-    movie.poster_path,
-    movie.budget,
-    movie.tagline,
-    movie.release_date,
-    movie.runtime,
-    movie.original_language
-  );
+  const container = createMovieContainer(movie);
   movies.appendChild(container);
 }
 
