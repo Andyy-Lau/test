@@ -2,8 +2,9 @@
 import { ref } from "vue";
 import axios from "axios";
 
-const selection = ref("movie");
-const movie = ref(false);
+
+const selection = ref("movie")
+const movie = ref(false)
 
 const getMovie = async() => {
   movie.value = (
@@ -12,13 +13,26 @@ const getMovie = async() => {
         import.meta.env.VITE_TMDB_API_KEY
       }&language=en-US&adult=false`
     )
-  ).data;
-  console.log(movie)
-};
-
-const getTrailer = async() => {
-  console.log("abc")
+  ).data
+  console.log(movie.id)
 }
+
+const getTrailer = async(id) => {
+  console.log("abc")
+  console.log(id)
+  const trailersData = (await axios.get(
+    `https://api.themoviedb.org/3//movie/${id}/videos?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&adult=false`
+  ))
+  console.log(trailersData)
+  // const trailer = trailersData.results.filter((trailer) => {
+  //   return trailer.type === "Trailer";
+  // })
+
+  // !trailer.length
+  //   ? alert("Sorry! No trailers for this film.")
+  //   : window.open(`https://www.youtube.com/watch?v=${trailer.at(0).key}`);
+}
+
 </script>
 
 <template>
@@ -40,14 +54,14 @@ const getTrailer = async() => {
   </div>
   <div v-if="movie" class="movieContainer">
     <h1>{{ movie.title }}</h1>
-    <img :src= "`https://image.tmdb.org/t/p/original/${movie.poster_path}`">
+    <img :src="`https://image.tmdb.org/t/p/original/${movie.poster_path}`" />
     <h2>{{ movie.overview }}</h2>
     <h3>{{ movie.release_date }}</h3>
     <h3>{{ movie.popularity }}</h3>
     <h3>the budget for this movie was {{ movie.budget }}</h3>
     <h3>The movie runtime is {{ movie.runtime }}</h3>
     <h3>{{ movie.original_language }}</h3>
-    <button @click="getTrailer">trailer</button>
+    <button @click="getTrailer(movie.id)">trailer</button>
     <!--trailer -->
   </div>
 </template>
