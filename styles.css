@@ -18,7 +18,7 @@ header {
 
 header div {
   background-color: #000;
-  opacity: .5;
+  opacity: 0.5;
   border-radius: 10px;
   height: 15vh;
   display: flex;
@@ -36,7 +36,6 @@ header div {
   padding: 12px 28px;
   text-align: center;
   border-radius: 10px;
-
 }
 
 label {
@@ -66,9 +65,7 @@ label {
   display: block;
 }
 
-.description
-
-.container button {
+.description .container button {
   display: block;
   margin: auto;
   height: 40px;
@@ -80,7 +77,7 @@ label {
 }
 
 .title h1 {
-  font-size: 64px;
+  font-size: 56px;
 }
 
 .title h2 {
@@ -99,8 +96,20 @@ label {
 
 img {
   display: block;
-  width: 50vw;
+  width: 35vw;
   height: auto;
   margin-right: auto;
   margin-left: auto;
+}
+
+#movies button {
+  display: block;
+  border-radius: 12px;
+  border: none;
+  width: 150px;
+  height: 48px;
+  font-size: 26px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 4rem;
 }

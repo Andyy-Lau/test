@@ -26,10 +26,16 @@ const createMovieContainer = (movie) => {
   movieImg.src = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
   movieTitle.innerText = movie.title;
   movieTagline.innerText = movie.tagline;
-  movieOverview.innerText = movie.overview === "" ? `There is no overview available for ${movie.title}` : movie.overview;
+  movieOverview.innerText =
+    movie.overview === ""
+      ? `There is no overview available for ${movie.title}`
+      : movie.overview;
   movieReleaseDate.innerText = `This movie was released in ${movie.release_date}`;
   moviePopularity.innerText = `Movie popularity: ${movie.popularity}`;
-  movieBudget.innerText = movie.budget == 0 ? "The budget is not available" : `The budget for this movie is $${movie.budget}`;
+  movieBudget.innerText =
+    movie.budget == 0
+      ? "The budget is not available"
+      : `The budget for this movie is $${movie.budget}`;
   movieRuntime.innerText = `The movie runtime is ${movie.runtime} minutes`;
   movieOriginalLanguage.innerText = `(${movie.original_language}) is the original language of ${movie.title}`;
   trailerButton.innerText = "Trailer";
