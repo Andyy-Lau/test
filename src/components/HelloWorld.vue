@@ -22,15 +22,15 @@ const getTrailer = async(id) => {
   console.log(id)
   const trailersData = (await axios.get(
     `https://api.themoviedb.org/3//movie/${id}/videos?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&adult=false`
-  ))
+  )).data
   console.log(trailersData)
-  // const trailer = trailersData.results.filter((trailer) => {
-  //   return trailer.type === "Trailer";
-  // })
+  const trailer = trailersData.results.filter((trailer) => {
+    return trailer.type === "Trailer";
+  })
 
-  // !trailer.length
-  //   ? alert("Sorry! No trailers for this film.")
-  //   : window.open(`https://www.youtube.com/watch?v=${trailer.at(0).key}`);
+  !trailer.length
+    ? alert("Sorry! No trailers for this film.")
+    : window.open(`https://www.youtube.com/watch?v=${trailer.at(0).key}`);
 }
 
 </script>
