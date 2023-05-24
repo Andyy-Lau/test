@@ -1,14 +1,16 @@
 <script setup>
 import { useStore } from "../pinia/index.js"
 import { ref } from "vue"
+import router from "../router/index.js"
 
 const store = useStore();
 const password = ref();
 const user = ref();
 
 const Login = () => {
-    console.log(password.value == store.password)
-    console.log(user.value == store.user)
+    if ((password.value == store.password) && (user.value == store.user)) {
+        router.push('/movie')
+    }
 }
 </script>
 
