@@ -3,11 +3,9 @@ import { defineStore } from 'pinia'
 export const useStore = defineStore('store', {
   state: () => {
     return {
-      count: 0,
+      user: 'tmdb',
+      password: 'movies',
       name: 'Eduardo',
-      isAdmin: true,
-      items: [],
-      hasChanged: true,
     }
   },
 })
