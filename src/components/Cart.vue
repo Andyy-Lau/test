@@ -1,7 +1,8 @@
-<script setup></script>
+<script setup>
+</script>
 
 <template>
-    <h1>Login</h1>
+    <h1>Cart</h1>
 </template>
 
 <style scoped></style>
