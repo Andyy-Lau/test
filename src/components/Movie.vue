@@ -4,6 +4,7 @@
     import { useStore } from "../pinia/index.js"
 
     const store = useStore();
+    const showModal = ref(false)
     let movieInfo = ref(false)
 
     const getMovie = async() => {
@@ -16,12 +17,14 @@
             }
             store.movies.push(result)
          })
+         return store.movies
     }
-    getMovie()
-    console.log(store.movies)
-    movieInfo = store.movies
-
+    movieInfo = getMovie()
     console.log(movieInfo)
+
+    const modalClick = () => {
+        showModal = !showModal
+    }
 </script>
 
 <template>
@@ -32,8 +35,14 @@
                 <RouterLink to="/cart" custom v-slot="{ navigate }">
                     <button @click="navigate">Cart</button>
                 </RouterLink>
+                <button @click="modalClick">Show Modal</button>
             </nav>
         </header>
+        <Transition>
+            <modal v-if="showModal" @close="showModal">
+                <h2>Modal open</h2>
+            </modal>
+        </Transition>
         <div v-if="movieInfo" class="contentContainer">
             <div v-for="movie in movieInfo" class="movieContainer">
                 <img :src="`https://image.tmdb.org/t/p/w500${movie.poster}`"/>
