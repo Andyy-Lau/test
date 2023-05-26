@@ -5,7 +5,7 @@ export const useStore = defineStore('store', {
     return {
       user: 'tmdb',
       password: 'movies',
-      name: 'Eduardo',
+      movies: [],
     }
   },
 })

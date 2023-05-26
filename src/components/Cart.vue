@@ -1,4 +1,7 @@
 <script setup>
+import { useStore } from "../pinia/index.js"
+
+const store = useStore()
 </script>
 
 <template>
