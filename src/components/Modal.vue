@@ -48,7 +48,7 @@ console.log(movie.poster_path);
 }
 .modal-inner-container {
   height: 50vh;
-  background-color: #3b444b;
+  background-color: #212529;
   width: clamp(280px, 100%, 900px);
   display: flex;
 }
@@ -81,5 +81,12 @@ button {
   width: 1.5rem;
   height: 1.5rem;
   text-align: center;
+}
+h3:hover {
+  cursor: pointer;
+}
+h3:active {
+  background-color: rgb(151, 158, 163);
+
 }
 </style>

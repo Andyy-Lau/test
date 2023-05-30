@@ -4,3 +4,9 @@
     box-sizing: border-box;
     color: #6272a4;
 }
+button:hover {
+    cursor: pointer;
+  }
+button:active {
+    background-color: rgb(151, 158, 163);
+}  

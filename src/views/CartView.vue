@@ -15,8 +15,8 @@ movies.value = store.cart;
     <Header :info="{ site: 'Cart', path: 'purchase', button: 'Back' }" />
     <div v-if="movies">
       <div v-for="movie in movies">
-        <img :src="`https://image.tmdb.org/t/p/w500${movie.poster}`" />
         <h1>{{ movie.title }}</h1>
+        <img :src="`https://image.tmdb.org/t/p/w500${movie.poster}`" />
       </div>
     </div>
   </body>
@@ -27,5 +27,8 @@ body {
   min-height: 100vh;
   background-color: #282a36;
   width: 100vw;
+}
+h1 {
+    display: block;
 }
 </style>
