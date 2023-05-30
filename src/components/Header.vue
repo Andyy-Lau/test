@@ -1,16 +1,23 @@
 <script setup>
-import router from "../router/index.js"
+import router from "../router/index.js";
+
+defineProps({
+  info: Object,
+});
+
+function Clicked(path) {
+  router.push(path)
+}
 </script>
 
 <template>
-    <div class="header">
-      <h1>Andy Movies</h1>
-      <nav>
-          <button @click="router.push('/login')">Login</button>
-          <button @click="router.push('/purchase')">Movies</button>
-          <button @click="router.push('/cart')">Cart</button>
-      </nav>
-    </div>
+  <div class="header">
+    <h1>{{ info.site }}</h1>
+    <h1>{{ info.path }}</h1>
+    <nav>
+      <button @click="Clicked()">{{ info.button }}</button>
+    </nav>
+  </div>
 </template>
 
 <style scoped>
@@ -35,4 +42,5 @@ button {
   font-size: 20px;
   border-radius: 8px;
   border: none;
-}</style>
+}
+</style>

@@ -4,6 +4,7 @@ import axios from "axios";
 import { useStore } from "../pinia/index.js";
 import router from "../router/index.js";
 import Modal from "../components/Modal.vue"
+import Header from "../components/Header.vue"
 
 const store = useStore();
 const showModal = ref(false);
@@ -18,12 +19,7 @@ const toggleModal = (id) => {
 
 <template>
   <body>
-    <header>
-      <h1>Andy Movies</h1>
-      <nav>
-        <button @click="router.push('/cart')">Cart</button>
-      </nav>
-    </header>
+    <Header :info="{site: 'Movies', path:'/cart', button: 'Cart'}"/>
     <div v-if="store.movies" class="contentContainer">
       <div v-for="movie in store.movies" class="movieContainer">
         <img
