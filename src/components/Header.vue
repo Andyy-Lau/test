@@ -27,14 +27,16 @@ function Clicked() {
   align-items: center;
   background-color: #191f4f;
   border-radius: 12px;
+  margin-bottom: 1rem;
 }
 h1 {
   padding-left: 1rem;
 }
 nav {
   display: flex;
-  width: 30vw;
+  width: auto;
   justify-content: space-evenly;
+  margin-right: 1rem;
 }
 button {
   padding: 6px 24px;

@@ -9,7 +9,7 @@ const user = ref();
 
 const Login = () => {
     if ((password.value == store.password) && (user.value == store.user)) {
-        router.push('/movie')
+        router.push('/purchase')
     }
 }
 </script>
