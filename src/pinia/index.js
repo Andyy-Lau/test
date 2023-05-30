@@ -1,11 +1,19 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export const useStore = defineStore('store', {
-  state: () => {
-    return {
-      user: 'tmdb',
-      password: 'movies',
-      movies: [],
+export const useStore = defineStore("store", {
+  state: () => ({
+    user: "tmdb",
+    password: "movies",
+    movies: [],
+    cart: [],
+  }),
+  actions: {
+    addToCart(poster, title) {
+      this.cart.push({
+        poster,
+        title,
+      });
+      console.log(this.cart);
     }
-  },
-})
+  }
+});

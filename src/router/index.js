@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Homepage from "../views/HomepageView.vue"
 import Login from "../views/LoginView.vue"
-import Movie from "../views/MovieView.vue"
+import Purchase from "../views/PurchaseView.vue"
 import Cart from "../views/CartView.vue"
 
 const router = createRouter({
@@ -16,8 +16,8 @@ const router = createRouter({
             component: Login
         },
         {
-            path: '/movie',
-            component: Movie
+            path: '/purchase',
+            component: Purchase
         },
         {
             path: '/cart',
