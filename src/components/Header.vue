@@ -1,19 +1,18 @@
 <script setup>
 import router from "../router/index.js";
 
-defineProps({
+const header = defineProps({
   info: Object,
 });
 
-function Clicked(path) {
-  router.push(path)
+function Clicked() {
+  router.push(header.info.path)
 }
 </script>
 
 <template>
   <div class="header">
     <h1>{{ info.site }}</h1>
-    <h1>{{ info.path }}</h1>
     <nav>
       <button @click="Clicked()">{{ info.button }}</button>
     </nav>

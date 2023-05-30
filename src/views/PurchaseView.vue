@@ -1,8 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import axios from "axios";
 import { useStore } from "../pinia/index.js";
-import router from "../router/index.js";
 import Modal from "../components/Modal.vue"
 import Header from "../components/Header.vue"
 
