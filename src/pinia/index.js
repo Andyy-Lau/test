@@ -8,12 +8,12 @@ export const useStore = defineStore("store", {
     cart: [],
   }),
   actions: {
-    addToCart(poster, title) {
+    addToCart(posterPath, movieTitle) {
       this.cart.push({
-        poster,
-        title,
+        poster: posterPath,
+        title: movieTitle,
       });
       console.log(this.cart);
-    }
-  }
+    },
+  },
 });

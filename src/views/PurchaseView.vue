@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from "vue";
 import { useStore } from "../pinia/index.js";
-import Modal from "../components/Modal.vue"
-import Header from "../components/Header.vue"
+import Modal from "../components/Modal.vue";
+import Header from "../components/Header.vue";
 
 const store = useStore();
 const showModal = ref(false);
@@ -17,7 +17,7 @@ const toggleModal = (id) => {
 
 <template>
   <body>
-    <Header :info="{site: 'Movies', path:'/cart', button: 'Cart'}"/>
+    <Header :info="{ site: 'Movies', path: '/cart', button: 'Cart' }" />
     <div v-if="store.movies" class="contentContainer">
       <div v-for="movie in store.movies" class="movieContainer">
         <img
@@ -26,7 +26,11 @@ const toggleModal = (id) => {
         />
       </div>
     </div>
-    <Modal v-if="showModal" :id="selectedMovieId" @toggleModal="toggleModal()" />
+    <Modal
+      v-if="showModal"
+      :id="selectedMovieId"
+      @toggleModal="toggleModal()"
+    />
   </body>
 </template>
 
