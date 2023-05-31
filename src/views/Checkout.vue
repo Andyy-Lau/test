@@ -13,6 +13,10 @@ console.log(store.cart);
     <input type="text" placeholder="Omar Qayum" id="cardname" />
     <label for="cardnumber">Credit Card Number</label>
     <input type="number" placeholder="xxxx-xxxx-xxxx-xxxx" id="cardnumber" />
+    <label for="expirydate">Credit Card Number</label>
+    <input type="number" placeholder="DD/MM" id="expirydate" />
+    <label for="securitycode">CVV</label>
+    <input type="number" placeholder="123" id="securitycode" />
   </div>
 </template>
 
@@ -21,5 +25,8 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+::placeholder {
+  text-align: center;
 }
 </style>

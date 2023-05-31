@@ -28,7 +28,7 @@ movies.value = store.cart;
       </div>
       <button @click="router.push('/checkout')">Continue to checkout</button>
     </div>
-    <div v-else=>
+    <div v-else >
       <h2>You have nothing in your cart.</h2>
     </div>
   </body>
