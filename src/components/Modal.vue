@@ -4,7 +4,6 @@ import { useStore } from "../pinia/index.js";
 
 const store = useStore();
 const props = defineProps(["id"]);
-
 const movie = (
   await axios.get(
     `https://api.themoviedb.org/3/movie/${props.id}?api_key=${
@@ -13,7 +12,7 @@ const movie = (
   )
 ).data;
 
-console.log(movie.poster_path);
+console.log(movie);
 </script>
 
 <template>
@@ -25,7 +24,10 @@ console.log(movie.poster_path);
           <div class="text-container">
             <h1>{{ movie.title }}</h1>
             <h2>{{ movie.release_date }}</h2>
-            <h3 @click="store.addToCart(movie.poster_path, movie.title)">Buy</h3>
+            <h4 class="movie-overview">{{ movie.overview }}</h4>
+            <h3 @click="store.addToCart(movie.poster_path, movie.title)">
+              Buy
+            </h3>
           </div>
         </div>
         <button @click="$emit('toggleModal')">X</button>
@@ -47,30 +49,35 @@ console.log(movie.poster_path);
   z-index: 5;
 }
 .modal-inner-container {
-  height: 50vh;
-  background-color: #212529;
+  height: 60vh;
+  background-color: #171b1f;
   width: clamp(280px, 100%, 900px);
   display: flex;
 }
 .info-container {
   display: flex;
-  width: 60vw;
+  width: 100%;
 }
 .text-container {
   display: grid;
   grid-template-rows: repeat(10, 1fr);
   text-align: center;
+  width: 80%;
 }
 h1 {
-  grid-row-start: 3;
-  width: 30vw;
+  grid-row-start: 1;
+  margin-top: 0.3rem;
 }
 h2 {
+  grid-row-start: 2;
+}
+h4 {
   grid-row-start: 4;
+  margin-left: 0.3rem;
 }
 h3 {
   background-color: aliceblue;
-  grid-row-start: 5;
+  grid-row-start: 7;
   width: 6rem;
   height: 2rem;
   text-align: center;
@@ -87,6 +94,5 @@ h3:hover {
 }
 h3:active {
   background-color: rgb(151, 158, 163);
-
 }
 </style>
