@@ -39,6 +39,7 @@ body {
   min-height: 100vh;
   background-color: #282a36;
   width: 100vw;
+  overflow: hidden;
 }
 header {
   height: 10vh;

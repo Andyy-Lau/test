@@ -34,6 +34,9 @@ const Login = () => {
 </template>
 
 <style scoped>
+:root {
+  --accent-color: #6200ee;
+}
 header {
   text-align: center;
 }

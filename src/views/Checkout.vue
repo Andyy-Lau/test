@@ -5,74 +5,134 @@ import Header from "../components/Header.vue";
 const store = useStore();
 
 const alert = () => {
-  console.log("alert")
-}
+  console.log("alert");
+};
 </script>
 
 <template>
   <body>
     <Header :info="{ site: 'Checkout', path: '/cart', button: 'Back' }" />
-    <form @submit="alert()">
-      <label for="cardname">Name on Card</label>
-      <input type="text" placeholder="Omar Qayum" id="cardname" />
-      <label for="cardnumber">Credit Card Number</label>
-      <input type="number" placeholder="xxxx-xxxx-xxxx-xxxx" id="cardnumber" />
-      <label for="expirydate">Expiry Date</label>
-      <input type="number" placeholder="DD/MM" id="expirydate" />
-      <label for="securitycode">CVV</label>
-      <input type="number" placeholder="123" id="securitycode" />
-      <input type="submit" value="Checkout" />
-    </form>
+    <div class="form-container">
+      <form>
+        <div class="input-container">
+          <input type="text" id="name" required />
+          <label for="name">First Name</label>
+        </div>
+
+        <div class="input-container">
+          <input type="email" id="email" required />
+          <label for="email">Email</label>
+        </div>
+        <div class="input-container">
+          <input type="number" id="cardnumber" required />
+          <label for="cardnumber">Card Number</label>
+        </div>
+        <div class="input-container">
+          <input type="number" id="securitycode" required />
+          <label for="securitycode">Security Code</label>
+        </div>
+        <div class="input-container">
+          <input type="text" id="expirydate" required />
+          <label for="expirydate">Expiry Date</label>
+        </div>
+      </form>
+    </div>
   </body>
 </template>
 
 <style scoped>
+:root {
+  --accent-color: #6200ee;
+}
+
 body {
-  background-color: rgb(162, 164, 165);
+  margin: 0;
+  font-family: Roboto, sans-serif;
   min-height: 100vh;
+  background-color: #dcdcdc;
 }
+
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  font-size: 22px;
-  margin-left: 1rem;
-  height: 250px;
-  gap: 1rem 0;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 95%;
+  max-width: 500px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%), 0 0 15px 0 rgb(0 0 0 / 2%),
+    0 0 20px 4px rgb(0 0 0 / 6%);
 }
-input {
-  width: 25vw;
-  height: 26px;
-  /* justify-self: center; */
-  font-size: 16px;
+
+.input-container {
+  background-color: #f5f5f5;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  height: 56px;
+  transition: background-color 500ms;
 }
+
+.input-container:hover {
+  background-color: #ececec;
+}
+
+.input-container:focus-within {
+  background-color: #dcdcdc;
+}
+
 label {
-  width: 30vw;
-  align-self: center;
-  /* margin-bottom: 1rem; */
-  /* justify-self: center; */
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  transform-origin: left top;
+  user-select: none;
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 150ms cubic-bezier(0.4, 0, 0.2, 1), top 500ms;
 }
-input[type="submit"] {
-  width: 105px;
-  height: 32px;
-  border-radius: 8px;
-  border: none;
-  font-size: 18px;
-  grid-column-start: 2;
-  justify-self: end;
-  margin-right: 9rem;
+
+input {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: transparent;
+  caret-color: var(--accent-color);
+  border: 1px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.42);
+  color: rgba(0, 0, 0, 0.87);
+  transition: border 500ms;
+  padding: 20px 16px 6px;
+  font-size: 1rem;
 }
-#cardname {
-  grid-row-start: 2;
+
+input:focus {
+  outline: none;
+  border-bottom-width: 2px;
+  border-bottom-color: var(--accent-color);
 }
-#expirydate {
-  grid-row-start: 4;
+
+input:focus + label {
+  color: var(--accent-color);
+}
+
+input:focus + label,
+input.is-valid + label {
+  transform: translateY(-100%) scale(0.75);
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-::placeholder {
-  text-align: center;
 }
 </style>
