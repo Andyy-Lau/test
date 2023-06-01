@@ -25,7 +25,7 @@ function Clicked() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #191f4f;
+  background-color: #414568;
   border-radius: 12px;
   margin-bottom: 1rem;
 }

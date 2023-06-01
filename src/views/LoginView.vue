@@ -39,15 +39,21 @@ header {
 }
 h1 {
   padding-top: 10px;
+  margin-bottom: 1rem;
 }
 form {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  gap: 1rem;
+  justify-items: center;
 }
 form > * {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
+}
+label {
+  margin-right: 1rem;
 }
 </style>

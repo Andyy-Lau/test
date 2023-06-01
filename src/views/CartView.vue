@@ -14,7 +14,7 @@ movies.value = store.cart;
 <template>
   <body>
     <Header :info="{ site: 'Cart', path: 'purchase', button: 'Back' }" />
-    <div v-if="movies">
+    <div v-if="movies" class="cart-content">
       <div v-for="movie in movies" class="movie-container">
         <img :src="`https://image.tmdb.org/t/p/w500${movie.poster}`" />
         <div class="text-container">
@@ -40,6 +40,10 @@ body {
   background-color: #282a36;
   width: 100vw;
 }
+.cart-content {
+  display: flex;
+  flex-direction: column;
+}
 .movie-container {
   display: flex;
   margin-left: 1rem;
@@ -49,13 +53,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 180px;
 }
 h1 {
   display: block;
 }
 img {
   aspect-ratio: auto;
-  width: 10vw;
+  height: 180px;
   margin-bottom: 2rem;
   margin-right: 1rem;
 }
@@ -67,5 +72,7 @@ button {
   border-radius: 8px;
   border: none;
   font-size: 16px;
+  margin-bottom: 3rem;
+  justify-self: center;
 }
 </style>
