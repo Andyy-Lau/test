@@ -35,6 +35,9 @@ const alert = () => {
           <input type="text" id="expirydate" required />
           <label for="expirydate">Expiry Date</label>
         </div>
+        <div class="input-container">
+          <input type="submit" value="Checkout"/>
+        </div>
       </form>
     </div>
   </body>
@@ -115,7 +118,11 @@ input {
   padding: 20px 16px 6px;
   font-size: 1rem;
 }
-
+input[type=submit] {
+  border: 1px solid black;
+  max-width: 40%;
+  padding-top: 6px;
+}
 input:focus {
   outline: none;
   border-bottom-width: 2px;
