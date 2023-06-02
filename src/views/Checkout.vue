@@ -118,10 +118,13 @@ input {
   padding: 20px 16px 6px;
   font-size: 1rem;
 }
+form:last-child {
+  width: 40%;
+}
 input[type=submit] {
-  border: 1px solid black;
-  max-width: 40%;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%), 0 0 15px 0 rgb(0 0 0 / 2%),;
   padding-top: 6px;
+  border: none;
 }
 input:focus {
   outline: none;
