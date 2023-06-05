@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-    <div class="footer">
+  <div class="footer">
     <div>
       <h2>Contact:</h2>
     </div>

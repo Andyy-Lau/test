@@ -6,7 +6,7 @@ const header = defineProps({
 });
 
 function Clicked() {
-  router.push(header.info.path)
+  router.push(header.info.path);
 }
 </script>
 

@@ -25,7 +25,16 @@ console.log(movie);
             <h1>{{ movie.title }}</h1>
             <h2>{{ movie.release_date }}</h2>
             <h4 class="movie-overview">{{ movie.overview }}</h4>
-            <h3 @click="store.addToCart(movie.poster_path, movie.title, movie.release_date, movie.overview)">
+            <h3
+              @click="
+                store.addToCart(
+                  movie.poster_path,
+                  movie.title,
+                  movie.release_date,
+                  movie.overview
+                )
+              "
+            >
               Buy
             </h3>
           </div>
